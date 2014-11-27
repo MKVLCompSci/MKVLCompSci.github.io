@@ -18,6 +18,7 @@
 
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
 		<script>
 		$(function() {
@@ -43,13 +44,6 @@
 			);
 
 		</script>
-		<script type="text/javascript">
-	
-			if ( $(window).width() >= 1157) {
-			document.location = "index.html";
-			}
-
-		</script>
 
 		<script>
 		$('.dropdown-toggle').click(function(e) {
@@ -62,11 +56,21 @@
 		});
 		</script>
 
+		<script type="text/javascript">
+		function homepage(){
+			$.cookie('homepage', '1', {path: '/'});
+			console.log("Set");
+			var hide=document.getElementById("alert");
+			hide.style.visibility = "hidden";
+		}
+		</script>
+
 		<script language="JavaScript">
 			browsername=navigator.appName;
 			if (browsername.indexOf("Netscape")!=-1) {
 				browsername="NS"
-				document.getElementByID('#netscape').style.opacity="1";
+				var net=document.getElementByID('#netscape');
+				net.style.opacity="1";
 			}
 		</script>
 
@@ -131,6 +135,10 @@
 			        </div>
 		        </div>
 		    </div>
+		</div>
+		<div class="alert alert-warning alert-dismissible" id="alert" role="alert" style="position:fixed; top:60px; right:10px; z-index:99999;">
+		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  <a onclick="homepage()" style="font-size:0.8em;">Click here to use this page instead of the new homepage</a>
 		</div>
 
 		<div class="center content">

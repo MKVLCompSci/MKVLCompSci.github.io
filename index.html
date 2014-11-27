@@ -18,6 +18,7 @@
 
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></sript>
 
 		<script>
 		$(function() {
@@ -36,9 +37,14 @@
 		});
 		</script>
 		<script type="text/javascript">
-	
-			if ( $(window).width() < 1157) {
+			if ($.cookie('homepage') == '1'){
+				document.location = "indexm.html";
+			}
+			else if ( $(window).width() < 1157) {
 			document.location = "indexm.html";
+			}
+			else if ($window).width()*1.196745562 < 676 {
+				document.location = "indexm.html";
 			}
 
 		</script>
@@ -65,8 +71,8 @@
 		<script language="JavaScript">
 			browsername=navigator.appName;
 			if (browsername.indexOf("Netscape")!=-1) {
-				browsername="NS"
-				document.getElementByID('#netscape').style.opacity="1";
+				var net=document.getElementByID('#netscape');
+				net.style.opacity="1";
 			}
 		</script>
 
@@ -143,6 +149,7 @@
 				</div>
 			</div>
 		</div>
+		<a href="indexm.html" style="position:fixed; bottom:0px; right:0px;">Use the mobile site</a>
 
 	</body>
 </html>

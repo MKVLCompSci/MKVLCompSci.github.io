@@ -18,7 +18,7 @@
 
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></sript>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
 		<script>
 		$(function() {
@@ -35,18 +35,6 @@
 		    }
 		  });
 		});
-		</script>
-		<script type="text/javascript">
-			if ($.cookie('homepage') == '1'){
-				document.location = "indexm.html";
-			}
-			else if ( $(window).width() < 1157) {
-			document.location = "indexm.html";
-			}
-			else if ($window).width()*1.196745562 < 676 {
-				document.location = "indexm.html";
-			}
-
 		</script>
 		<script>
 			$(document).ready(
@@ -68,9 +56,19 @@
 		});
 		</script>
 
+		<script type="text/javascript">
+		function homepage(){
+			$.cookie('homepage', '1', {path: '/'});
+			console.log("Set");
+			var hide=document.getElementById("alert");
+			hide.style.visibility = "hidden";
+		}
+		</script>
+
 		<script language="JavaScript">
 			browsername=navigator.appName;
 			if (browsername.indexOf("Netscape")!=-1) {
+				browsername="NS"
 				var net=document.getElementByID('#netscape');
 				net.style.opacity="1";
 			}
@@ -78,78 +76,161 @@
 
 	</head>
 
-	<body style="height:100%; position:fixed; left:0; top:0;">
+	<body>
 		<div class="netscape" style="opacity:0; position:fixed; margin-top: 500px;z-index:999999;">
 			<h1>WHY ARE YOU USING NETSCAPE</h1>
 		</div>
+		<div class="navbar-wrapper">
+		    <div class="container">
+		        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		            <div class="container">
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				                <span class="sr-only">Toggle navigation</span>
+				                <span class="icon-bar"></span>
+				                <span class="icon-bar"></span>
+				                <span class="icon-bar"></span>
+			                </button>
+			                <a class="navbar-brand" href="index.html">Markville CompSci</a>
+			            </div>
+			            <div class="navbar-collapse collapse">
+			                <ul class="nav navbar-nav">
+				        	<li class="active"><a href="index.html">Home</a></li>
+				        	<li><a href="resources.html">Resources</a></li>
+				        	<li><a href="opportunities.html">Opportunities</a></li>
+				        	<li class="dropdown">
+						        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
 
-		<div class="overflow" style="min-height:100%; border:none;">
+					          	<ul class="dropdown-menu" role="menu">
+						          	<li role="presentation" class="dropdown-header">Engineering</li>
+						          	<li><a href="gallery.html">Robotics</a></li>
+						          	<li class="divider"></li>
+					          	    <li role="presentation" class="dropdown-header">Programming</li>
+						            <li><a href="gallery.html#html">HTML</a></li>
+						            <li><a href="gallery.html#turing">Turing</a></li>
+						            <li><a href="gallery.html#java">Java</a></li>
+						            <li><a href="gallery.html#android">Android</a></li>
+						        </ul>
+					        </li>
 
-			<div id="carousel" class="carousel slide" data-ride="carousel">
-			  <!-- Indicators -->
-			    <ol class="carousel-indicators">
-				    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel" data-slide-to="1"></li>
-				    <li data-target="#carousel" data-slide-to="2"></li>
-			    </ol>
+			                </ul>
+			                <ul class="nav navbar-nav navbar-right">
+			             		<li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <span class="caret"></span></a>
+						          	<ul class="dropdown-menu" role="menu">
+							            <li><a href="courses/btt1dg.html">BTT1DG</a></li>
+							            <li><a href="courses/ics2dg.html">ICS2DG</a></li>
+							            <li><a href="courses/ics2O1.html">ICS2O1</a></li>
+							            <li><a href="courses/ics3u1.html">ICS3U1</a></li>
+							            <li><a href="courses/ics3c1.html">ICS3C1</a></li>
+							            <li><a href="courses/ics4u1.html">ICS4U1</a></li>
+							            <li><a href="courses/ics4c1.html">ICS4C1</a></li>
+							            <li class="divider"></li>
+							            <li><a href="courses.html">View all &raquo;</a></li>
+							        </ul>
+				                </li>
 
-			  <!-- Wrapper for slides -->
-			    <div class="carousel-inner">
-			    	<div class="item">
-			        	<img src="http://i.imgur.com/PjW6IvX.jpg" alt="..." class="">
-			      		<div class="carousel-caption">
-			      		.AAAAAAAALOLCKOAKDWAODAWODJWAJDk <button class="btn btn-default">adauiwdhawdnow</button>
-			     		</div>
-			    	</div>
-				    <div class="item active">
-				      	<img src="http://i.imgur.com/76CdsTx.jpg" alt="...">
-				      	<div class="carousel-caption">
-				      	....
-				    	</div>
-			    	</div>
-				    <div class="item">
-				      	<img src="http://i.imgur.com/g791wVJ.jpg" alt="...">
-				      	<div class="carousel-caption">
-				      	....
-				    	</div>
-			    	</div>
-
-				</div>
-
-			  <!-- Controls -->
-				<a class="left carousel-control ignore" href="#carousel" role="button" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left" style="margin-top:-50px;"></span>
-				</a>
-				<a class="right carousel-control ignore" href="#carousel" role="button" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right" style="margin-top:-50px;"></span>
-				</a>
-			</div>
+			                </ul>
+			            </div>
+			        </div>
+		        </div>
+		    </div>
 		</div>
-		<div class="container-fluid" style="margin-left:-15px; min-width:100%;">
-			<div class="navigation-bar">
-				<div class="row">
-					<div class="col-md-5" style="height:100px; color:white;">
-						<p class="qs" style="vertical-align: middle; margin:0 0 0 0; font-size:2em; padding-top:25px; padding-left:25px;">Markville Computer Science</p>
+		<!--<div class="alert alert-warning alert-dismissible" id="alert" role="alert" style="position:fixed; top:60px; right:10px; z-index:99999;">
+		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  <a onclick="homepage()" style="font-size:0.8em;">Click here to use this page instead of the new homepage</a>
+		</div>-->
+
+		<div class="center content">
+			<div class="container-fluid">
+
+				<div id="carousel" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				    <ol class="carousel-indicators">
+					    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel" data-slide-to="1"></li>
+					    <li data-target="#carousel" data-slide-to="2"></li>
+				    </ol>
+
+				  <!-- Wrapper for slides -->
+				    <div class="carousel-inner" style="">
+				    	<div class="item">
+				        	<img src="http://i.imgur.com/PjW6IvX.jpg" alt="..." class="">
+				      		<div class="carousel-caption">
+				      		 <!--<button class="btn btn-default"></button>-->
+				     		</div>
+				    	</div>
+					    <div class="item active">
+					      	<img src="http://i.imgur.com/76CdsTx.jpg" alt="...">
+					      	<div class="carousel-caption">
+					      	
+					    	</div>
+				    	</div>
+					    <div class="item">
+					      	<img src="http://i.imgur.com/g791wVJ.jpg" alt="...">
+					      	<div class="carousel-caption">
+					      	
+					    	</div>
+				    	</div>
+
 					</div>
-					<div class="col-md-1" style="padding-top:30px;">
-						<a href="index.html" class="qs main" style="font-size:1.5em;">Home</p></a>
-					</div>
-					<div class="col-md-2" style="padding-top:30px;">
-						<a href="resources.html" class="qs main" style="font-size:1.5em;">Resources</p></a>
-					</div>
-					<div class="col-md-2" style="padding-top:30px; margin-left:-75px;">
-						<a href="opportunities.html" class="qs main" style="font-size:1.5em;">Opportunities</p></a>
-					</div>
-					<div class="col-md-1" style="padding-top:30px; margin-left:-20px;">
-						<a href="gallery.html" class="qs main" style="font-size:1.5em;">Gallery</p></a>
-					</div>
-					<div class="col-md-1" style="padding-top:30px; padding-left:25px;">
-						<a href="courses.html" class="qs main" style="font-size:1.5em;">Courses</p></a>
-					</div>
+
+				  <!-- Controls -->
+					<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
 				</div>
 			</div>
-		</div>
-		<a href="indexm.html" style="position:fixed; bottom:0px; right:0px;">Use the mobile site</a>
 
+			<div class="container-fluid">
+
+			</div>
+
+		    <div class="container-fluid content">
+
+		      <!-- Three columns of text below the carousel -->
+		        <div class="row">
+			        <div class="col-md-4">
+				        <span class="fa-stack fa-lg" style="font-size:5em;">
+				        	<i class="fa hover fa-circle-thin fa-stack-2x"></i>
+				            <i class="fa hover green fa-code fa-stack-1x"></i>
+			            </span>
+			            <h3>Hour of Code</h3>
+			            <p>The Hour of Code is a global movement reaching tens of millions of students in 180+ countries. Anyone, anywhere can organize an Hour of Code event. One-hour tutorials are available in over 30 languages. No experience needed. Ages 4 to 104.</p>
+			            <a class="btn btn-default" href="https://hourofcode.com" role="button">View details &raquo;</a>
+			        </div><!-- /.col-lg-4 -->
+			        <div class="col-md-4">
+				        <span class="fa-stack fa-lg" style="font-size:5em;">
+				        	<i class="fa hover fa-circle-thin fa-stack-2x"></i>
+				            <i class="fa hover green fa-code fa-stack-1x"></i>
+			            </span>
+			            <h3>Why Computer Science?</h3>
+			            <p>The following is a video featuring computer, music and sport figures commenting on the importance of studying Computer Science. This video describe the importance of computer programming and why it study should be part of your education.</p>
+			            <a class="btn btn-default" href="http://www.youtube.com/watch?v=dU1xS07N-FA" role="button">View details &raquo;</a>
+			        </div><!-- /.col-lg-4 -->
+			        <div class="col-md-4">
+			           	<span class="fa-stack fa-lg" style="font-size:5em;">
+				        	<i class="fa hover fa-circle-thin fa-stack-2x"></i>
+				            <i class="fa hover blue fa-group" style="font-size:0.9em;"></i>
+			            </span>
+			           <h3>Gallery</h3>
+			            <p>See what our students have been up to.</p>
+			            <a class="btn btn-default" href="gallery.html" role="button">View All &raquo;</a>
+			        </div><!-- /.col-lg-4 -->
+		        </div><!-- /.row -->
+
+		        <br><br><br><br>
+		        <hr class="divider"></hr>    
+			    <div class="footer">
+			    	<p class="os"> &copy; 2014 Markville Computer Science</p> 
+			    	<a href="https://twitter.com/yrdsb" class="twitter-follow-button" data-show-count="false">Follow @yrdsb</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+					</script>
+			    </div>
+		    </div>
+		</div>
 	</body>
 </html>
